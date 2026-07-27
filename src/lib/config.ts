@@ -2,7 +2,7 @@
 export const WHATSAPP_NUMBER = "917659045882";
 
 export const WHATSAPP_MESSAGE =
-  "Hi! I want cricket match updates and watch links on Get ID.";
+  "Hi! I want a Id on Get ID.";
 
 export const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
 
