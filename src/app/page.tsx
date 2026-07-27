@@ -1,8 +1,5 @@
 "use client";
 
-import Image from "next/image";
-import Link from "next/link";
-import { useState } from "react";
 import {
   WEBSITE_LABEL,
   WEBSITE_URL,
@@ -41,7 +38,7 @@ function ExternalIcon({ className }: { className?: string }) {
   );
 }
 
-function ClockIcon({ className }: { className?: string }) {
+function LiveIcon({ className }: { className?: string }) {
   return (
     <svg
       className={className}
@@ -53,13 +50,13 @@ function ClockIcon({ className }: { className?: string }) {
       strokeLinejoin="round"
       aria-hidden="true"
     >
-      <circle cx="12" cy="12" r="9" />
-      <path d="M12 7v5l3 2" />
+      <rect x="2" y="5" width="20" height="14" rx="2" />
+      <path d="M10 9l5 3-5 3V9z" fill="currentColor" stroke="none" />
     </svg>
   );
 }
 
-function ShieldIcon({ className }: { className?: string }) {
+function ScoreIcon({ className }: { className?: string }) {
   return (
     <svg
       className={className}
@@ -71,13 +68,13 @@ function ShieldIcon({ className }: { className?: string }) {
       strokeLinejoin="round"
       aria-hidden="true"
     >
-      <path d="M12 2l8 4v6c0 5-3.4 9.4-8 10-4.6-.6-8-5-8-10V6l8-4z" />
-      <path d="M9 12l2 2 4-5" />
+      <path d="M4 4h16v16H4z" />
+      <path d="M8 8h8M8 12h8M8 16h5" />
     </svg>
   );
 }
 
-function GiftIcon({ className }: { className?: string }) {
+function FansIcon({ className }: { className?: string }) {
   return (
     <svg
       className={className}
@@ -89,111 +86,19 @@ function GiftIcon({ className }: { className?: string }) {
       strokeLinejoin="round"
       aria-hidden="true"
     >
-      <path d="M20 12v10H4V12" />
-      <path d="M2 7h20v5H2z" />
-      <path d="M12 22V7" />
-      <path d="M12 7H7.5a2.5 2.5 0 1 1 0-5C10 2 12 7 12 7z" />
-      <path d="M12 7h4.5a2.5 2.5 0 1 0 0-5C14 2 12 7 12 7z" />
+      <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+      <circle cx="9" cy="7" r="4" />
+      <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+      <path d="M16 3.13a4 4 0 0 1 0 7.75" />
     </svg>
   );
 }
 
 export default function Home() {
-  const [menuOpen, setMenuOpen] = useState(false);
-
   return (
     <div className="flex min-h-dvh flex-col">
-      {/* <header className="sticky top-0 z-50 border-b border-[var(--line)] bg-[var(--bg-elevated)]/95 backdrop-blur-md">
-        <div className="mx-auto flex h-16 max-w-5xl items-center justify-between px-4 sm:h-[4.25rem] sm:px-6">
-          <Link href="/" className="flex items-center gap-2" aria-label="Get ID home">
-            <Image
-              src="/logo.png"
-              alt="Get ID"
-              width={160}
-              height={48}
-              className="h-10 w-auto sm:h-11"
-              priority
-            />
-          </Link>
-
-          <nav className="hidden items-center gap-8 text-sm font-semibold text-white/80 md:flex">
-            <a href="#home" className="transition hover:text-[var(--gold)]">
-              Home
-            </a>
-            <a
-              href={WEBSITE_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="transition hover:text-[var(--gold)]"
-            >
-              Website
-            </a>
-            <a
-              href={WHATSAPP_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-full bg-[var(--whatsapp)] px-4 py-2 text-white transition hover:bg-[var(--whatsapp-hover)]"
-            >
-              WhatsApp
-            </a>
-          </nav>
-
-          <button
-            type="button"
-            className="flex h-10 w-10 items-center justify-center rounded-md text-white md:hidden"
-            aria-label={menuOpen ? "Close menu" : "Open menu"}
-            aria-expanded={menuOpen}
-            onClick={() => setMenuOpen((v) => !v)}
-          >
-            <span className="sr-only">Menu</span>
-            <span className="flex flex-col gap-1.5">
-              <span
-                className={`block h-0.5 w-6 bg-white transition ${menuOpen ? "translate-y-2 rotate-45" : ""}`}
-              />
-              <span
-                className={`block h-0.5 w-6 bg-white transition ${menuOpen ? "opacity-0" : ""}`}
-              />
-              <span
-                className={`block h-0.5 w-6 bg-white transition ${menuOpen ? "-translate-y-2 -rotate-45" : ""}`}
-              />
-            </span>
-          </button>
-        </div>
-
-        {menuOpen && (
-          <div className="border-t border-[var(--line)] bg-[var(--bg-elevated)] px-4 py-4 md:hidden">
-            <div className="flex flex-col gap-3 text-sm font-semibold">
-              <a
-                href="#home"
-                className="py-2 text-white/85"
-                onClick={() => setMenuOpen(false)}
-              >
-                Home
-              </a>
-              <a
-                href={WEBSITE_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="py-2 text-white/85"
-              >
-                Visit Website
-              </a>
-              <a
-                href={WHATSAPP_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="rounded-full bg-[var(--whatsapp)] px-4 py-3 text-center text-white"
-              >
-                Chat on WhatsApp
-              </a>
-            </div>
-          </div>
-        )}
-      </header> */}
-
       <main id="home" className="relative flex flex-1 flex-col overflow-hidden">
         <section className="relative flex min-h-[calc(100dvh-4rem)] flex-1 items-center justify-center px-4 py-16 sm:px-6 sm:py-20">
-          {/* Atmospheric background */}
           <div
             className="pointer-events-none absolute inset-0"
             aria-hidden="true"
@@ -212,34 +117,22 @@ export default function Home() {
           </div>
 
           <div className="relative z-10 mx-auto flex w-full max-w-xl flex-col items-center text-center">
-            {/* <div className="animate-fade-up mb-7 sm:mb-8">
-              <Image
-                src="/logo.png"
-                alt="Get ID — sports & casino betting"
-                width={420}
-                height={140}
-                className="mx-auto h-auto w-[min(88vw,22rem)] drop-shadow-[0_12px_40px_rgba(253,184,19,0.18)] sm:w-[24rem]"
-                priority
-              />
-            </div> */}
-
             <div className="animate-fade-up-delay-1 mb-5 inline-flex items-center gap-2 rounded-full border border-white/15 bg-black/45 px-3.5 py-1.5 text-[0.7rem] font-semibold tracking-wide text-white/95 sm:text-xs">
-              <span className="text-[var(--gold)]" aria-hidden="true">
-                ★
+              <span className="relative flex h-2 w-2" aria-hidden="true">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-red-500 opacity-75" />
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-red-500" />
               </span>
-              Trusted Platform
+              Cricket Watching Platform
             </div>
 
             <h1 className="animate-fade-up-delay-2 font-[family-name:var(--font-barlow)] text-[clamp(2.35rem,9vw,3.75rem)] font-extrabold leading-[0.95] tracking-wide uppercase">
-              <span className="block text-white">Your Ultimate</span>
-              <span className="mt-1 block text-[var(--gold)]">
-                Gaming Partner
-              </span>
+              <span className="block text-white">Watch Cricket</span>
+              <span className="mt-1 block text-[var(--gold)]">Live &amp; Loud</span>
             </h1>
 
             <p className="animate-fade-up-delay-3 mt-5 max-w-md text-[0.95rem] leading-relaxed text-[var(--muted)] sm:text-base">
-              Sports, cricket & casino — get your ID fast with secure support.
-              Chat with us or open the official site to start playing.
+              Follow every ball, every six, every match moment. Get ID is built
+              for cricket fans who love live action, scores, and highlights.
             </p>
 
             <div className="animate-fade-up-delay-4 mt-8 flex w-full max-w-sm flex-col gap-3.5 sm:mt-10">
@@ -266,15 +159,15 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Feature content */}
         <section className="px-4 pb-16 sm:px-6 sm:pb-20">
           <div className="mx-auto w-full max-w-5xl">
             <div className="text-center">
               <h2 className="font-[family-name:var(--font-barlow)] text-2xl font-extrabold tracking-wide text-white sm:text-3xl">
-                Instant. Trusted. Rewarding.
+                Live. Updated. Fan-First.
               </h2>
               <p className="mx-auto mt-3 max-w-2xl text-[0.98rem] leading-relaxed text-[var(--muted)] sm:text-base">
-                Get ID makes it easy to start betting with fast withdrawals, reliable support, and bonus rewards.
+                Everything a cricket fan needs — live matches, instant updates,
+                and a community that never misses a moment.
               </p>
             </div>
 
@@ -282,42 +175,44 @@ export default function Home() {
               <article className="group rounded-[1.6rem] border border-white/15 bg-black/35 p-6 backdrop-blur-md transition hover:border-[var(--gold)]/40">
                 <div className="flex items-center gap-3">
                   <span className="inline-flex rounded-xl border border-[var(--gold)]/40 bg-[rgba(253,184,19,0.08)] p-3 text-[var(--gold)]">
-                    <ClockIcon className="h-6 w-6" />
+                    <LiveIcon className="h-6 w-6" />
                   </span>
                   <h3 className="text-lg font-bold text-white transition group-hover:text-[var(--gold)]">
-                    Instant Withdrawal
+                    Live Match Streams
                   </h3>
                 </div>
                 <p className="mt-3 text-sm leading-relaxed text-[var(--muted)]">
-                  Withdraw when you need it, with a smooth and quick process.
+                  Catch international &amp; league cricket live — never miss a
+                  match day.
                 </p>
               </article>
 
               <article className="group rounded-[1.6rem] border border-white/15 bg-black/35 p-6 backdrop-blur-md transition hover:border-[var(--gold)]/40">
                 <div className="flex items-center gap-3">
                   <span className="inline-flex rounded-xl border border-[var(--gold)]/40 bg-[rgba(253,184,19,0.08)] p-3 text-[var(--gold)]">
-                    <ShieldIcon className="h-6 w-6" />
+                    <ScoreIcon className="h-6 w-6" />
                   </span>
                   <h3 className="text-lg font-bold text-white transition group-hover:text-[var(--gold)]">
-                    Trusted Experience
+                    Instant Score Updates
                   </h3>
                 </div>
                 <p className="mt-3 text-sm leading-relaxed text-[var(--muted)]">
-                  Support you can count on and a platform designed for reliability.
+                  Ball-by-ball scores, wickets, and match status as it happens.
                 </p>
               </article>
 
               <article className="group rounded-[1.6rem] border border-white/15 bg-black/35 p-6 backdrop-blur-md transition hover:border-[var(--gold)]/40">
                 <div className="flex items-center gap-3">
                   <span className="inline-flex rounded-xl border border-[var(--gold)]/40 bg-[rgba(253,184,19,0.08)] p-3 text-[var(--gold)]">
-                    <GiftIcon className="h-6 w-6" />
+                    <FansIcon className="h-6 w-6" />
                   </span>
                   <h3 className="text-lg font-bold text-white transition group-hover:text-[var(--gold)]">
-                    Bonus & Rewards
+                    Fan Community
                   </h3>
                 </div>
                 <p className="mt-3 text-sm leading-relaxed text-[var(--muted)]">
-                  Enjoy ongoing bonuses and reward offers when you get started.
+                  Share highlights, talk cricket, and stay connected with fellow
+                  fans.
                 </p>
               </article>
             </div>
@@ -326,10 +221,10 @@ export default function Home() {
               <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
                 <div className="text-center sm:text-left">
                   <p className="text-xs font-semibold tracking-wide text-[var(--gold)]">
-                    CLAIM BONUS
+                    JOIN THE FANS
                   </p>
                   <p className="mt-1 text-base font-bold text-white">
-                    Ready to earn rewards? Chat with us on WhatsApp.
+                    Want match updates &amp; watch links? Message us on WhatsApp.
                   </p>
                 </div>
 
@@ -350,7 +245,7 @@ export default function Home() {
 
       <footer className="border-t border-[var(--line)] bg-black px-4 py-5 text-center text-xs text-white/45 sm:px-6">
         <p>
-          © {new Date().getFullYear()} Get ID ·{" "}
+          © {new Date().getFullYear()} Get ID · Cricket for fans ·{" "}
           <a
             href={WEBSITE_URL}
             target="_blank"

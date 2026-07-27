@@ -15,13 +15,13 @@ const barlow = Barlow_Condensed({
 });
 
 export const metadata: Metadata = {
-  title: "Get ID | Your Ultimate Betting Partner",
+  title: "Get ID | Watch Cricket Live",
   description:
-    "Get ID — trusted sports & casino betting platform. Chat on WhatsApp or visit www.getid.live to get started.",
+    "Get ID — cricket watching platform for fans. Live matches, scores, highlights. Chat on WhatsApp or visit getid.live.",
   openGraph: {
-    title: "Get ID | Your Ultimate Betting Partner",
+    title: "Get ID | Watch Cricket Live",
     description:
-      "Trusted sports & casino betting. Connect on WhatsApp or visit www.getid.live.",
+      "Live cricket streams, scores & fan updates. Connect on WhatsApp or visit getid.live.",
     url: "https://www.getid.live",
     siteName: "Get ID",
     type: "website",
