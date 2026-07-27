@@ -1,0 +1,113 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #050505;
+  --bg-elevated: #0c0c0c;
+  --surface: #111111;
+  --ink: #ffffff;
+  --muted: #b8b8b8;
+  --gold: #fdb813;
+  --gold-soft: #ffd56a;
+  --whatsapp: #25d366;
+  --whatsapp-hover: #1ebe57;
+  --line: rgba(255, 255, 255, 0.12);
+}
+
+@theme inline {
+  --color-background: var(--bg);
+  --color-foreground: var(--ink);
+  --color-gold: var(--gold);
+  --color-gold-soft: var(--gold-soft);
+  --color-muted: var(--muted);
+  --color-whatsapp: var(--whatsapp);
+  --color-surface: var(--surface);
+  --font-sans: var(--font-outfit);
+  --font-display: var(--font-barlow);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100%;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-outfit), system-ui, sans-serif;
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes drift {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) rotate(-18deg);
+  }
+  50% {
+    transform: translate3d(12px, -18px, 0) rotate(-14deg);
+  }
+}
+
+@keyframes pulse-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.45);
+  }
+  50% {
+    box-shadow: 0 0 0 12px rgba(37, 211, 102, 0);
+  }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.8s ease-out both;
+}
+
+.animate-fade-up-delay-1 {
+  animation: fade-up 0.8s ease-out 0.12s both;
+}
+
+.animate-fade-up-delay-2 {
+  animation: fade-up 0.8s ease-out 0.24s both;
+}
+
+.animate-fade-up-delay-3 {
+  animation: fade-up 0.8s ease-out 0.36s both;
+}
+
+.animate-fade-up-delay-4 {
+  animation: fade-up 0.8s ease-out 0.48s both;
+}
+
+.hero-shape {
+  animation: drift 14s ease-in-out infinite;
+}
+
+.cta-pulse {
+  animation: pulse-glow 2.4s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-up,
+  .animate-fade-up-delay-1,
+  .animate-fade-up-delay-2,
+  .animate-fade-up-delay-3,
+  .animate-fade-up-delay-4,
+  .hero-shape,
+  .cta-pulse {
+    animation: none;
+  }
+}
